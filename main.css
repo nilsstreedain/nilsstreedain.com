@@ -15,15 +15,16 @@ body {
 
 #content,#main {
 		position: absolute;
-		width: 60%;
 }
 
 #main {
 		height: 99%;
+		width: 50%;
 		right: 0;
 }
 
 #content {
+		width: 60%;
 		right: 20%;
 		top: 50%;
 		transform: translateY(-50%);
