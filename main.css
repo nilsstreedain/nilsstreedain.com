@@ -1,0 +1,141 @@
+@font-face {
+		font-family: proxima-nova;
+		src: url(https://use.typekit.net/af/705e94/00000000000000003b9b3062/27/l?subset_id=2&fvd=n4&v=3);
+		font-display: swap;
+}
+
+body {
+		background: url(images/lightbackground.svg) no-repeat center fixed;
+		background-size: cover;
+}
+
+#content, #logo svg, #main {
+		transition: 200ms ease-in-out;
+}
+
+#content,#main {
+		position: absolute;
+		width: 60%;
+}
+
+#main {
+		height: 99%;
+		right: 0;
+}
+
+#content {
+		right: 20%;
+		top: 50%;
+		transform: translateY(-50%);
+		font-family: "proxima-nova";
+}
+
+#logo svg {
+		fill: #212121;
+		fill-rule: nonzero;
+		display: none;
+		width: 50%;
+		margin-bottom: 5em;
+		transform: translateX(50%);
+}
+
+h1, h2, p, a {
+		color: #212121;
+		text-decoration: none;
+		margin: 0;
+}
+
+h1 {
+		margin: -.5em 0 0;
+		font-size: 50px;
+}
+
+p {
+		margin: .25em 0;
+		font-size: 23px;
+}
+
+ul {
+		padding: 0;
+		list-style: none;
+		font-size: 15px;
+		text-transform: uppercase;
+		letter-spacing: .14em;
+}
+
+li {
+		margin-top: 2em;
+}
+
+a svg {
+		height: 30px;
+		margin: 1em 1em 0 0;
+		fill: #212121;
+}
+
+a svg:hover {
+		fill: #909090;
+}
+
+ a:hover {
+		color: #909090;
+}
+
+@media (prefers-color-scheme:dark) {
+		body {
+				background-image: url(images/darkbackground.svg);
+		}
+
+		#logo svg, a svg {
+				fill: #fff;
+		}
+
+		h1, h2, p, a {
+				color: #fff;
+		}
+}
+
+@media only screen and (max-width:1400px) and (min-width:850px),(pointer:coarse) and (orientation:landscape) {
+		#content {
+				width: 100%;
+				right: 15%;
+		}
+}
+
+@media only screen and (max-width:850px), (pointer:coarse) and (orientation:portrait) {
+		#main {
+				width: 100%;
+				background-color: #fff;
+		}
+
+		@media (prefers-color-scheme:dark) {
+			#main {
+				background-color: #212121;
+			}
+		}
+}
+
+@media only screen and (max-width:850px) {
+		#content {
+				width: 100%;
+				left: 5%;
+		}
+}
+
+@media (pointer:coarse) and (orientation:portrait) {
+		#content {
+				top: 25%;
+				width: 50%;
+				left: 25%;
+				transform: scale(2,2);
+		}
+
+		#text {
+				width: 87.5%;
+				margin-left: 6.25%;
+		}
+
+		#logo svg {
+				display: block;
+		}
+}
