@@ -5,6 +5,7 @@
 }
 
 body {
+		background-color: #212121;
 		background: url(images/lightbackground.svg) no-repeat center fixed;
 		background-size: cover;
 }
@@ -124,6 +125,10 @@ a svg:hover {
 }
 
 @media (pointer:coarse) and (orientation:portrait) {
+		body {
+				background-image: none;
+		}
+	
 		#content {
 				top: 25%;
 				width: 50%;
