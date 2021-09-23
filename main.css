@@ -5,9 +5,9 @@
 }
 
 body {
-		background-color: #212121;
 		background: url(images/lightbackground.svg) no-repeat center fixed;
 		background-size: cover;
+		background-color: #212121;
 }
 
 #content, #logo svg, #main {
