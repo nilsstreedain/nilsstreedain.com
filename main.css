@@ -7,7 +7,7 @@
 body {
 		background: url(images/lightbackground.svg) no-repeat center fixed;
 		background-size: cover;
-		background-color: #212121;
+		background-color: #fff;
 }
 
 #content, #logo svg, #main {
@@ -86,6 +86,7 @@ a svg:hover {
 @media (prefers-color-scheme:dark) {
 		body {
 				background-image: url(images/darkbackground.svg);
+				background-color: #212121;
 		}
 
 		#logo svg, a svg {
