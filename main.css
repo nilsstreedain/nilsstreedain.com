@@ -1,148 +1,152 @@
 @font-face {
-		font-family: proxima-nova;
-		src: url(proxima-nova);
-		font-display: swap;
+	font-family: proxima-nova;
+	src: url(proxima-nova);
+	font-display: swap;
 }
 
 body {
-		background: url(images/lightbackground.svg) no-repeat center fixed;
-		background-size: cover;
-		background-color: #fff;
+	background: url(images/lightbackground.svg) no-repeat center fixed;
+	background-size: cover;
+	background-color: #fff;
 }
 
 #content, #logo svg, #main {
-		transition: 200ms ease-in-out;
+	transition: 200ms ease-in-out;
 }
 
 #content,#main {
-		position: absolute;
+	position: absolute;
 }
 
 #main {
-		height: 99%;
-		width: 50%;
-		right: 0;
+	height: 100%;
+	/* width: 425px; */
+	width: 50%;
+	/* width: calc(25% + 2em); */
+	/* width: 30em; */
+	right: 0;
+	/* white-space: nowrap; */
 }
 
 #content {
-		width: 60%;
-		right: 20%;
-		top: 50%;
-		transform: translateY(-50%);
-		font-family: "proxima-nova";
+	top: 50%;
+	width: 425px;
+	transform: translateY(-50%);
+	font-family: "proxima-nova";
 }
 
 #logo svg {
-		fill: #212121;
-		fill-rule: nonzero;
-		display: none;
-		width: 50%;
-		margin-bottom: 5em;
-		transform: translateX(50%);
+	fill: #212121;
+	fill-rule: nonzero;
+	display: none;
+	width: 50%;
+	margin-bottom: 5em;
+	transform: translateX(50%);
 }
 
 h1, h2, p, a {
-		color: #212121;
-		text-decoration: none;
-		margin: 0;
+	color: #212121;
+	text-decoration: none;
+	margin: 0;
 }
 
 h1 {
-		margin: -.5em 0 0;
-		font-size: 50px;
+	margin: -.5em 0 0;
+	font-size: 50px;
 }
 
 p {
-		margin: .25em 0;
-		font-size: 23px;
+	margin: .25em 0;
+	font-size: 23px;
 }
 
 ul {
-		padding: 0;
-		list-style: none;
-		font-size: 15px;
-		text-transform: uppercase;
-		letter-spacing: .14em;
+	padding: 0;
+	list-style: none;
+	font-size: 15px;
+	text-transform: uppercase;
+	letter-spacing: .14em;
 }
 
 li {
-		margin-top: 2em;
+	margin-top: 2em;
 }
 
 a svg {
-		height: 30px;
-		margin: 1em 1em 0 0;
-		fill: #212121;
+	height: 30px;
+	margin: 1em 1em 0 0;
+	fill: #212121;
 }
 
 a svg:hover {
-		fill: #909090;
+	fill: #909090;
 }
 
- a:hover {
-		color: #909090;
+a:hover {
+	color: #909090;
 }
 
 @media (prefers-color-scheme:dark) {
 		body {
-				background-image: url(images/darkbackground.svg);
-				background-color: #212121;
+			background-image: url(images/darkbackground.svg);
+			background-color: #212121;
 		}
 
 		#logo svg, a svg {
-				fill: #fff;
+			fill: #fff;
 		}
 
 		h1, h2, p, a {
-				color: #fff;
+			color: #fff;
 		}
 }
 
-@media only screen and (max-width:1400px) and (min-width:850px),(pointer:coarse) and (orientation:landscape) {
-		#content {
-				width: 100%;
-				right: 15%;
-		}
+@media only screen and (max-width:100px) and (min-width:850px),(pointer:coarse) and (orientation:landscape) {
+	#content {
+		/* width: 100%;
+		right: 15%; */
+	}
 }
 
 @media only screen and (max-width:850px), (pointer:coarse) and (orientation:portrait) {
-		#main {
-				width: 100%;
-				background-color: #fff;
-		}
+	#main {
+		/* width: 100%; */
+	}
 
-		@media (prefers-color-scheme:dark) {
-			#main {
-				background-color: #212121;
-			}
-		}
+	body {
+		/* background-image: none; */
+	}
 }
 
 @media only screen and (max-width:850px) {
-		#content {
-				width: 100%;
-				left: 5%;
-		}
+	#content {
+		width: 100%;
+		left: 5%;
+	}
 }
 
 @media (pointer:coarse) and (orientation:portrait) {
-		body {
-				background-image: none;
-		}
-	
-		#content {
-				top: 25%;
-				width: 50%;
-				left: 25%;
-				transform: scale(2,2);
-		}
+	body {
+		background-image: none;
+	}
 
-		#text {
-				width: 87.5%;
-				margin-left: 6.25%;
-		}
+	#main {
+		width: 100%;
+	}
 
-		#logo svg {
-				display: block;
-		}
+	#content {
+		top: 35%;
+		width: 50%;
+		left: 25%;
+		transform: scale(2,2);
+	}
+
+	#text {
+		width: 87.5%;
+		margin-left: 6.25%;
+	}
+
+	#logo svg {
+		display: block;
+	}
 }
