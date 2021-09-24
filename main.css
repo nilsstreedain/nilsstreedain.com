@@ -10,18 +10,14 @@ body {
 	background-color: #fff;
 }
 
-/* body, #content, #logo svg {
-	transition: 200ms ease-in-out;
-} */
-
-#content {
+body, #content, #logo svg {
 	transition: 200ms ease-in-out;
 }
 
 #content {
 	position: absolute;
 	top: 50%;
-	width: 50%;
+	width: 425px;
 	left: 50%;
 	transform: translateY(-50%);
 	font-family: "proxima-nova";
@@ -93,7 +89,7 @@ a:hover {
 	}
 }
 
-@media only screen and (max-width:900px)  {
+@media only screen and (max-width: 900px)  {
 
 	body {
 		background-image: none;
