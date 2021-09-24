@@ -89,7 +89,7 @@ a:hover {
 	}
 }
 
-@media only screen and (max-width: 900px)  {
+@media only screen and (max-width: 900px) {
 
 	body {
 		background-image: none;
@@ -117,12 +117,11 @@ a:hover {
 		transform: scale(2,2);
 	}
 
-	#text {
-		width: 87.5%;
-		margin-left: 6.25%;
-	}
-
 	#logo svg {
 		display: block;
+	}
+
+	#text {
+		margin-left: 5%;
 	}
 }
