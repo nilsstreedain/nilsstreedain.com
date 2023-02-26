@@ -1,0 +1,8 @@
+{
+    "name": "Nils Streedain",
+    "description": "Creative from Portland, OR. I make cool stuff and put it on the internet. Follow me wherever.",
+    "icons": [{
+        "src": "/assets/icons/google-touch-icon.png",
+        "sizes": "512x512"
+    }]
+}
