@@ -5,13 +5,14 @@
 }
 
 body {
+	margin: 0;
 	background: url(images/lightbackground.svg) no-repeat center fixed;
 	background-size: cover;
 	background-color: #fff;
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translateY(-55%);
+	transform: translateY(-50%);
 }
 
 body * {
@@ -24,7 +25,7 @@ body * {
 #logo {
 	fill: #212121;
 	display: none;
-	margin: 0 0 5em;
+	margin: 5em 0 5em;
 	width: 50%;
 	transform: translateX(50%);
 }
@@ -60,6 +61,31 @@ a svg:hover path, a:hover {
 	fill: #909090;
 }
 
+@media (orientation:portrait) {
+	body {
+		background-image: none;
+	}
+
+	#logo {
+		display: block;
+	}
+
+	@media (pointer:fine) {
+		body {
+			text-align: center;
+			width: 75%;
+			left: 12.5%;
+		}
+	}
+
+	@media (pointer:coarse) {
+		body {
+			width: 95%;
+			left: 2.5%;
+		}
+	}
+}
+
 @media (prefers-color-scheme:dark) {
 	body {
 		background-image: url(images/darkbackground.svg);
@@ -69,30 +95,5 @@ a svg:hover path, a:hover {
 	body * {
 		color: #fff;
 		fill: #fff;
-	}
-}
-
-@media only screen and (max-width: 900px) {
-	body {
-		background-image: none;
-		left: 0;
-	}
-
-	#logo {
-		display: block;
-	}
-}
-
-@media (pointer:coarse) and (orientation:portrait) {
-	body {
-		background-image: none;
-		top: 35%;
-		width: 50%;
-		left: 25%;
-		transform: scale(1.9,1.9);
-	}
-
-	#logo {
-		display: block;
 	}
 }
