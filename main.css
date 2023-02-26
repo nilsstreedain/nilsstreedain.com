@@ -1,12 +1,12 @@
 @font-face {
 	font-family: typeface;
-	src: url(typeface.woff2) format('woff2'),
-		url(typeface.woff) format('woff');
+	src: url(assets/fonts/typeface.woff2) format('woff2'),
+		url(assets/fonts/typeface.woff) format('woff');
 }
 
 body {
 	margin: 0;
-	background: url(images/lightbackground.svg) no-repeat center fixed;
+	background: url(assets/images/lightbackground.svg) no-repeat center fixed;
 	background-size: cover;
 	background-color: #fff;
 	position: absolute;
@@ -88,7 +88,7 @@ a svg:hover path, a:hover {
 
 @media (prefers-color-scheme:dark) {
 	body {
-		background-image: url(images/darkbackground.svg);
+		background-image: url(assets/images/darkbackground.svg);
 		background-color: #212121;
 	}
 	
