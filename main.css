@@ -1,7 +1,23 @@
+:root {
+	--primary: #fff;
+	--accent: #212121;
+	--highlight: #ebebeb;
+	--highlight2: #878787;
+	--sPad: 15px;
+	--mPad: 30px;
+	--lPad: 90px;
+}
+
 @font-face {
 	font-family: typeface;
-	src: url(assets/fonts/typeface.woff2) format('woff2'),
-		url(assets/fonts/typeface.woff) format('woff');
+	src: url(assets/fonts/typeface.woff2) format(woff2);
+}
+
+
+html {
+	scroll-behavior: smooth;
+	background-color: var(--primary);
+	font-family: typeface;
 }
 
 body {
@@ -9,95 +25,191 @@ body {
 }
 
 #splash {
-	position: absolute;
-	height: 100%;
-	width: 100%;
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap:  5%;
-	align-items: center;
-	font-family: "typeface";
-	color: #212121;
-
+	color: var(--accent);
+	
 	& svg {
-		fill: #212121;
+		fill: var(--accent);
 	}
-}
-
-#logo {
-	width: 50%;
-	min-width: 10em;
-	justify-self: end;
 }
 
 #card {
-	white-space: nowrap;
-	padding: 0 5%;
-	& h1 {
-		font-size: 50px;
-		margin: 0 0 .25em;
+	height: 100vh;
+	width: 100vw;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 5vw;
+	align-items: center;
+	
+	#logo {
+		width: 25vw;
+		min-width: 10em;
+		justify-self: end;
 	}
 	
-	& h2, h3 {
-		margin: .25em 0;
-	}
-	
-	& h3 {
-		font-weight: normal;
-		font-size: 23px;
-	}
-	
-	& p {
-		margin: 1em 0;
-	}
-	
-	& a {
-		font-size: 15px;
-		letter-spacing: .14em;
-		text-decoration: none;
-		color: inherit;
+	#card-content {
+		white-space: nowrap;
+		padding-right: 5vw;
+		& h1 {
+			font-size: 50px;
+			margin: 0 0 .25em;
+		}
 		
-		& svg {
-			width: 30px;
-			margin-right: 1em;
+		& h2, h3 {
+			margin: .25em 0;
+		}
+		
+		& h3 {
+			font-weight: normal;
+			font-size: 23px;
+		}
+		
+		& p {
+			margin: 1em 0;
+		}
+		
+		& a {
+			font-size: 15px;
+			letter-spacing: .14em;
+			text-decoration: none;
+			color: inherit;
+			
+			& svg {
+				width: 30px;
+				margin-right: 1em;
+			}
 		}
 	}
 }
 
-@media (orientation:portrait) {
-	#splash {
-		height: 85%;
+#nav-arrow {
+	margin-top: -5vh;
+	height: 5vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+	& svg {
+		height: 3vh;
+	}
+}
+
+nav {
+	position: sticky;
+	top: 0;
+	height: 60px;
+	background-color: var(--primary);
+/*	border-bottom: 1px solid var(--highlight);*/
+	overflow: hidden;
+	padding: 0 var(--lPad);
+	background: linear-gradient(var(--highlight) 0 0) no-repeat bottom / 100% 1px;
+
+	& a {
+		float: left;
 		display: flex;
-		justify-content: flex-end;
-		flex-direction: column;
+		height: 100%;
+		align-items: center;
+		justify-content: center;
+		width: calc(5 * var(--mPad));
+		text-decoration: none;
+		color: var(--highlight2);
+		background: linear-gradient(var(--accent) 0 0) no-repeat bottom / 0% 1px;
+		transition: 250ms;
 	}
 	
-	#logo {
-		width: 40%;
-		margin: 3em 0;
+	& .curr {
+		font-weight: bold;
+	}
+	
+	& .curr, & .page:hover {
+		color: var(--accent);
+		background-size: 100% 1px;
+/*		border-bottom: 1px solid var(--accent);*/
+	}
+	
+	& .project {
+		float: right;
+	}
+}
+
+#content {
+	height: calc(100vh - 60px - var(--mPad));
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-gap: var(--mPad);
+	margin: var(--mPad) var(--lPad) 0;
+	color: var(--accent);
+	overflow: hidden;
+}
+
+#util, #util img {
+	width: calc(3 * var(--lPad));
+}
+
+#util img {
+	border: 2px solid var(--highlight);
+	border-radius: 100%;
+}
+
+#util h1 {
+	margin: 0;
+}
+
+#util p {
+	margin: 0;
+	font-size: 1.17em;
+	color: var(--highlight2);
+}
+
+main {
+	padding: var(--mPad);
+	padding-top: 0;
+	border-radius: 10px;
+	border: 1px solid var(--highlight);
+	height: fit-content;
+}
+
+main h2 {
+	padding-top: var(--mPad);
+	color: var(--accent);
+}
+
+@media (orientation:portrait) {
+	#card {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		
+		& #logo {
+			width: 35vw;
+			margin: 5vh 0;
+		}
+		
+		& #card-content {
+			padding: 0;
+		}
 	}
 
 	@media (pointer:fine) {
 		#splash {
 			text-align: center;
-		}
-	}
-
-	@media (pointer:coarse) {
-		body {
+			
+			& #card-content a svg {
+				margin: 0 .5em;
+			}
 		}
 	}
 }
 
 @media (prefers-color-scheme:dark) {
-	body {
-		background-color: #212121;
+	:root {
+		--primary: #212121;
+		--accent: #fff;
+		--highlight: #373737;
 	}
-	
-	#splash {
-		color: #fff;
-		& svg {
-			fill: #fff;
-		}
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
 	}
 }
