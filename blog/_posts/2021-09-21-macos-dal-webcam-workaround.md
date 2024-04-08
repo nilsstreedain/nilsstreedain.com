@@ -1,6 +1,6 @@
 ---
 title: Bypassing macOS DAL for Webcams
-subtitle: Instructions for enabling DAL (Device Abstraction Layer) plugin support on macOS devices (Catalina and later).
+subtitle: How to enable DAL (Device Abstraction Layer) plugins on macOS devices (Catalina and later).
 image: /assets/img/macOS-webcam.png
 last_updated: 2022-03-03
 featured: true
@@ -24,7 +24,6 @@ The primary method to enable DAL plugins requires disabling file system protecti
 6. Reboot your Mac
 
 ### Disabling DAL plugins (enabling all SIP features) can be done with the following steps:
-
 1. Boot your Mac into Recovery Mode (hold Command + R during startup)
 2. Choose Language
 3. Click the 'Utilities' tab on the top bar

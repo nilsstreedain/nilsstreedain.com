@@ -1,9 +1,8 @@
 ---
 title: Set Up Pi-hole + Unbound
-subtitle: Instructions for setting up Pi-Hole With Unbound and AutoUpdating Blocklists
+subtitle: How to set up Pi-Hole With Unbound and AutoUpdating Blocklists
 image: /assets/img/pi-hole+unbound.png
 last_updated: 2021-10-04
-featured: true
 ---
 
 # unbound + pi-hole + AutoUpdating BlockLists

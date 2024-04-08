@@ -1,20 +1,23 @@
-# RPi-Docker-Server-Setup
+---
+subtitle: How to Set Up a Simple Raspberry Pi Docker Setup, Configured with Pi-Hole and Cloudflared using Auto-Updating Blocklists
+image: /assets/img/raspberry-pi+docker.png
+last_updated: 2022-09-19
+featured: true
+---
 
+# RPi-Docker-Server-Setup
 Before getting started:
 - Create a fresh install of Raspberry Pi OS with ssh enabled (add an empty file named ssh to the boot folder)
 - Connect the Raspberry Pi to your network (make sure to use a trunk port and assign a static IP)
 - ssh into the Pi
 
 ## Prepare Raspberry Pi
-
 Change default user password:
-
 ```bash
 passwd
 ```
 
 Update Raspberry Pi
-
 ```bash
 sudo apt update
 ```
@@ -24,7 +27,6 @@ sudo apt full-upgrade
 ```
 
 Open raspberry pi configuration
-
 ```bash
 sudo raspi-config
 ```
@@ -36,9 +38,7 @@ Set Raspberry Pi Country (raspi-config > Localisation Options > WLAN Country)
 Finish > Would you like to reboot now? > Yes
 
 ## Setup non-default user
-
 ### Enable root SSH (If headless)
-
 Enable root password
 ```bash
 sudo passwd root
@@ -60,7 +60,6 @@ sudo systemctl restart sshd
 ```
 
 ### Rename pi user
-
 Login to root account
 ```bash
 ssh root@raspberrypi
@@ -82,16 +81,13 @@ logout
 ```
 
 ## SSH Authentication With Public/Private Key Pair Instead of Password
-
 ### On Raspberry pi:
-
 Create public key directory:
 ```bash
 mkdir ~/.ssh && chmod 700 ~/.ssh
 ```
 
 ### On Mac:
-
 Generate Public/Private Key Pair:
 ```bash
 ssh-keygen -b 4096
@@ -103,7 +99,6 @@ scp ~/.ssh/id_rsa.pub nilsstreedain@raspberrypi:~/.ssh/authorized_keys
 ```
 
 ### Disable root password
-
 Diable root password:
 ```bash
 sudo passwd -l root
@@ -130,7 +125,6 @@ sudo systemctl restart sshd
 ```
 
 ## Setup Auto-Updtaes
-
 Install Unattanded Upgrades:
 ```bash
 sudo apt-get install unattended-upgrades
@@ -142,7 +136,6 @@ sudo dpkg-reconfigure --priority=low unattended-upgrades
 ```
 
 ## Setup Firewall
-
 Install Uncomplicated Firewall:
 ```bash
 sudo apt install ufw
@@ -159,7 +152,6 @@ sudo ufw enable
 ```
 
 ## Setup VLANs:
-
 Install vlan package:
 ```bash
 sudo apt install vlan
@@ -188,7 +180,6 @@ hostname -I
 ```
 
 ## Setup Docker
-
 Install dependencies:
 ```bash
 sudo apt-get install curl git
@@ -210,7 +201,6 @@ sudo apt-get -y install docker-compose-plugin
 ```
 
 ## Setup Pi-Hole
-
 Create a directory to setup Pi-Hole with Auto-Updating Blocklists:
 ```bash
 mkdir pihole pihole/etc-pihole-updatelists && cd pihole

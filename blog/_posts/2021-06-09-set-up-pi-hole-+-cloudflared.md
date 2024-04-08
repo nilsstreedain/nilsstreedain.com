@@ -1,9 +1,8 @@
 ---
 title: Set Up Pi-hole + Cloudflared
-subtitle: Instructions for setting up Pi-Hole with Cloudflared and AutoUpdating Blocklists
+subtitle: How to set up Pi-Hole with Cloudflared and AutoUpdating Blocklists
 image: /assets/img/pi-hole+cloudflared.png
 last_updated: 2021-10-04
-featured: true
 ---
 
 # cloudflared + pi-hole + AutoUpdating BlockLists
