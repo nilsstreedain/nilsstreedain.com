@@ -5,6 +5,7 @@
     <div class="text-content">
         <h3>{{ post.title }}</h3>
         <p class="subtitle">{{ post.subtitle }}</p>
-        <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
+<!--        <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>-->
+        <p class="date">{{ post.last_updated | date: "%b %d, %Y" }}</p>
     </div>
 </a>
