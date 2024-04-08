@@ -1,15 +1,13 @@
 ---
-title: Set Up Pi-hole + Cloudflared
+title: Setting Up Pi-hole with Cloudflared
 subtitle: How to set up Pi-Hole with Cloudflared and AutoUpdating Blocklists
-image: /assets/img/pi-hole+cloudflared.png
+image: /assets/img/phole-cloudflared.png
 last_updated: 2021-10-04
 ---
-
-# cloudflared + pi-hole + AutoUpdating BlockLists
 Before getting started:
 - Create a fresh install of Raspbian (or your prefered distro) with ssh enabled
-- Connect your Raspberry Pi (or whatever computer you're using) to your network
-- ssh into the Pi
+- Connect your Raspberry Pi (or another preferred computer) to your network
+- ssh into the device
 
 ## Update Raspberry Pi
 ```bash
@@ -30,9 +28,9 @@ passwd
 sudo raspi-config
 ```
 
-Set Raspberry Pi Country (raspi-config > Localisation Options > WLAN Country)
+Set Raspberry Pi Country (`raspi-config` > `Localisation Options` > `WLAN Country`)
 
-Change Raspberry Pi Hostname (raspi-config > System Options > Hostname)
+Change Raspberry Pi Hostname (`raspi-config` > `System Options > Hostname`)
 
 ## Setup Cloudflared
 Install Cloudflared
@@ -71,7 +69,7 @@ sudo systemctl status cloudflared
 ```
 
 ### Update Cloudflared weekly
-Create a monthly cron job called updatecloudflared
+Create a monthly cron job called `updatecloudflared`
 ```bash
 sudo nano /etc/cron.weekly/updatecloudflared
 ```
@@ -93,7 +91,7 @@ sudo chmod +x /etc/cron.weekly/updatecloudflared
 ## Setup Pi-Hole
 Install Pi-Hole and follow the steps in the user interface
 
-Make sure to set the upstream DNS to 127.0.0.1#5053 for IPv4 and ::1#5053 for IPv6
+Make sure to set the upstream DNS to `127.0.0.1#5053` for IPv4 and `::1#5053` for IPv6
 ```bash
 sudo curl -sSL https://install.pi-hole.net | bash
 ```
@@ -141,7 +139,7 @@ sudo pihole-updatelists
 ```
 
 ### Update pi-hole lists daily
-Create a daily cron job called updatelists
+Create a daily cron job called `updatelists`
 ```bash
 sudo nano /etc/cron.daily/updatelists
 ```

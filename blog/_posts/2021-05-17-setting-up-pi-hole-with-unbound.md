@@ -1,11 +1,9 @@
 ---
-title: Set Up Pi-hole + Unbound
+title: Setting Up Pi-hole with Unbound
 subtitle: How to set up Pi-Hole With Unbound and AutoUpdating Blocklists
-image: /assets/img/pi-hole+unbound.png
+image: /assets/img/phole-unbound.png
 last_updated: 2021-10-04
 ---
-
-# unbound + pi-hole + AutoUpdating BlockLists
 Before getting started:
 - Create a fresh install of Raspbian (or your prefered distro) with ssh enabled
 - Connect your Raspberry Pi (or whatever computer you're using) to your network
