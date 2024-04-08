@@ -1,0 +1,31 @@
+title: Nils Streedain
+author: "Nils Streedain"
+
+social:
+  name: Nils Streedain
+  links:
+    - https://www.instagram.com/nils.streedain
+    - https://www.youtube.com/c/nilsstreedain
+    - https://github.com/nilsstreedain
+    - https://www.snapchat.com/add/nilsstreedain
+    - https://twitter.com/nilsstreedain
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  
+feed:
+  categories:
+    - blog

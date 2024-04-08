@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="card">
+    <img src="{{ page.image }}" id="poster"/>
+	<h1>{{ page.title }}</h1>
+	<h3>{{ page.subtitle }}</h2>
+    <img alt="Hits" id="viewCounter" src="https://hits.sh/nilsstreedain.com.svg?style=for-the-badge&label=views&extraCount=241&color=212121&labelColor=212121"/>
+	<p id="date">
+        {{ page.date | date: "%b %d, %Y" }}
+        {% if page.last_updated %}
+           | Updated {{ page.last_updated | date: "%b %d, %Y" }}
+        {% endif %}
+	</p>
+    <p id="author-name"><a href="/#nav">By Nils Streedain</a></p>
+
+	{{ content }}
+</div>

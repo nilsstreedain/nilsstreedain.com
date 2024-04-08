@@ -1,0 +1,10 @@
+<a href="{{ post.url }}" class="list-item">
+    {% if post.image %}
+    <img src="{{ post.image }}">
+    {% endif %}
+    <div class="text-content">
+        <h3>{{ post.title }}</h3>
+        <p class="subtitle">{{ post.subtitle }}</p>
+        <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
+    </div>
+</a>
