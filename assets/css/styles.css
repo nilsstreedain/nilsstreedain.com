@@ -243,6 +243,7 @@ nav {
             font-family: ui-monospace;
             padding: 2px;
             font-size: .85em;
+            word-wrap: break-word;
         }
         
         & pre.highlight {
