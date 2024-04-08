@@ -316,7 +316,7 @@ nav {
             
             #logo {
                 width: 32.5vw;
-                margin: 20svh 0 5svh;
+                margin: 22.5svh 0 5svh;
             }
             
             #card-content {
@@ -343,8 +343,22 @@ nav {
     }
     
     @media (pointer: coarse) {
-        #splash #splash-card #card-content h3 {
-            font-size: 20px;
+        #splash #splash-card #card-content {
+            & h1 {
+                font-size: 36px;
+            }
+            
+            & h2 {
+                font-size: 19px;
+            }
+            
+            & h3 {
+                font-size: 17px;
+            }
+            
+            & a {
+                font-size: 14px;
+            }
         }
         
         #poster {
