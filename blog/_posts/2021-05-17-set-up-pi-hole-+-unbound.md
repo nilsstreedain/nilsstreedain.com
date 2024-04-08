@@ -1,6 +1,6 @@
 ---
 title: Set Up Pi-hole + Unbound
-subtitle: How I Reverse Engineered a Closed 2FA Solution to Work with Apps like Google Authenticator
+subtitle: Instructions for setting up Pi-Hole With Unbound and AutoUpdating Blocklists
 image: /assets/img/pi-hole+unbound.png
 last_updated: 2021-10-04
 featured: true
