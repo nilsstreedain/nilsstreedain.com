@@ -1,0 +1,363 @@
+/* Utility Styles*/
+:root {
+	--primary: #fff;
+	--accent: #212121;
+	--highlight: #ebebeb;
+	--highlight2: #878787;
+	--sPad: 15px;
+	--mPad: 30px;
+	--lPad: 90px;
+    --codeBackground: #f3f6f9;
+    --authorWidth: calc(3 * var(--lPad));
+}
+
+@font-face {
+	font-family: typeface;
+	src: url(/assets/fonts/typeface.woff2) format(woff2);
+}
+
+html {
+	background-color: var(--primary);
+	font-family: typeface;
+    
+    & body {
+        margin: 0;
+    }
+}
+
+/* Splash Page Styles */
+#splash {
+    color: var(--accent);
+    
+    & svg {
+        fill: var(--accent);
+    }
+    
+    #splash-card {
+        height: 100svh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 5vw;
+        align-items: center;
+        
+        #logo {
+            width: 25vw;
+            min-width: 10em;
+            max-width: 20em;
+            justify-self: end;
+        }
+        
+        #card-content {
+            white-space: nowrap;
+            padding-right: 5vw;
+            
+            & h1 {
+                font-size: 50px;
+                margin: 0 0 .25em;
+            }
+            
+            & h2, & h3 {
+                margin: .25em 0;
+            }
+            
+            & h3 {
+                font-weight: normal;
+                font-size: 23px;
+            }
+            
+            & a {
+                letter-spacing: .14em;
+                text-decoration: none;
+                color: inherit;
+                
+                & svg {
+                    width: 2em;
+                    margin-right: 1em;
+                }
+            }
+        }
+    }
+    
+    #nav-arrow {
+        margin-top: -2em;
+        height: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        & svg {
+            height: 1.5em;
+        }
+    }
+}
+
+/* Navigation Bar Styles */
+nav {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    overflow: hidden;
+    padding: 0 var(--lPad);
+    background: linear-gradient(var(--highlight) 0 0) no-repeat bottom / 100% 1px, var(--primary);
+
+    & a {
+        float: left;
+        display: flex;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        width: calc(5 * var(--mPad));
+        text-decoration: none;
+        color: var(--highlight2);
+        background: linear-gradient(var(--accent) 0 0) no-repeat bottom / 0% 1px;
+        transition: 250ms;
+    }
+    
+    .curr, .page:hover {
+        color: var(--accent);
+        background-size: 100% 1px;
+    }
+    
+    .project {
+        float: right;
+    }
+}
+
+/* Primary Content Styles */
+#content {
+    height: calc(100vh - 60px - var(--mPad));
+    display: grid;
+    grid-template-columns: var(--authorWidth) minmax(0, 1fr);
+    gap: var(--mPad);
+    margin: var(--mPad) var(--lPad) 0;
+    color: var(--accent);
+    transition: 250ms;
+    
+    #author {
+        transition: opacity 250ms ease, transform 250ms ease;
+    }
+    
+    #author, #author img {
+        width: var(--authorWidth);
+    }
+    
+    #author {
+        & img {
+            border: 2px solid var(--highlight);
+            border-radius: 100%;
+        }
+        
+        & h1 {
+            margin: 0;
+        }
+        
+        & p {
+            margin: 0;
+            font-size: 1.17em;
+            color: var(--highlight2);
+        }
+    }
+    
+    .card {
+        margin-bottom: var(--sPad);
+        padding: var(--mPad);
+        padding-top: 0;
+        border-radius: 10px;
+        border: 1px solid var(--highlight);
+        font-family: -apple-system;
+        line-height: 1.5;
+        
+        #poster {
+            margin-left: calc(0px - var(--mPad));
+            width: calc(100% + var(--mPad) * 2);
+            border-radius: 10px 10px 0 0;
+            max-width: none;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        
+        #date {
+            font-size: .7em;
+            font-family: ui-monospace;
+            margin-bottom: 0;
+        }
+        
+        #author-name {
+            margin: 0;
+        }
+        
+        #viewCounter {
+            height: 24px;
+            width: auto;
+            border-radius: 0;
+            float: right;
+        }
+        
+        & h1, & h2, & h3 {
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
+        }
+        
+        & h1 {
+            border-bottom: 1px solid var(--highlight);
+            padding-bottom: .3em;
+            font-size: 2em;
+        }
+        
+        & h2 {
+            border-bottom: 1px solid var(--highlight);
+            padding-bottom: .3em;
+            font-size: 1.5em;
+            margin-top: 24px;
+        }
+        
+        & h3 {
+            font-size: 1.25em;
+            margin-top: 24px;
+        }
+        
+        & img {
+            width: 100%;
+            overflow: hidden;
+            max-width: 500px;
+            border-radius: 10px;
+        }
+        
+        & a {
+            text-decoration: none;
+            color: var(--highlight2);
+            background: linear-gradient(var(--accent) 0 0) no-repeat bottom / 0% 1px;
+            transition: background 250ms;
+            
+            &:hover {
+                color: var(--accent);
+                background-size: 100% 1px;
+            }
+        }
+        
+        & code.highlighter-rouge {
+            border-radius: 5px;
+            background: var(--codeBackground);
+            font-family: ui-monospace;
+            padding: 2px;
+            font-size: .85em;
+        }
+        
+        & pre.highlight {
+            padding: var(--sPad);
+            border-radius: 10px;
+            background: var(--codeBackground);
+            overflow-x: auto;
+            line-height: 2;
+        }
+    }
+    
+    & main .list-item {
+        text-decoration: none;
+        color: var(--accent);
+        display: block;
+        height: 200px;
+        margin-bottom: var(--sPad);
+        border-radius: 10px;
+        border: 1px solid var(--highlight);
+        font-family: -apple-system;
+        word-break: break-word;
+        
+        
+        .text-content {
+            margin-top: 0;
+            margin: var(--mPad);
+            
+            .subtitle, .date {
+                color: var(--highlight2);
+            }
+        }
+        
+        & img {
+            float: right;
+            height: 100%;
+            width: 250px;
+            object-fit: cover;
+            margin-left: var(--mPad);
+            border-radius: 0 9px 9px 0;
+        }
+    }
+}
+
+/* Special Formatting Cases */
+/* Small desktop screen */
+@media only screen and (max-width: 1200px) {
+    #author {
+        opacity: 0;
+        transform: translateX(-150%);
+    }
+    
+    #content {
+        grid-template-columns: 0 minmax(0, 1fr);
+        gap: 0;
+    }
+}
+
+/* Portrait Orientation */
+@media (orientation: portrait) {
+    :root {
+        --sPad: 10px;
+        --mPad: 20px;
+        --lPad: 20px;
+    }
+    
+    #splash {
+        text-align: center;
+        
+        #splash-card {
+            display: block;
+            
+            #logo {
+                width: 32.5vw;
+                margin: 20svh 0 5svh;
+            }
+            
+            #card-content {
+                padding: 0;
+                white-space: normal;
+                
+                & a svg {
+                    margin: 0 .5em;
+                }
+            }
+        }
+    }
+    
+    #content main .list-item {
+        height: auto;
+        
+        & img {
+            float: none;
+            width: 100%;
+            height: 200px;
+            border-radius: 9px 9px 0 0;
+            margin: 0;
+        }
+    }
+    
+    @media (pointer: coarse) {
+        #splash #splash-card #card-content h3 {
+            font-size: 20px;
+        }
+        
+        #poster {
+            height: 200px;
+        }
+    }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme:dark) {
+	:root {
+		--primary: #212121;
+		--accent: #fff;
+		--highlight: #373737;
+        --codeBackground: #121519;
+	}
+}

@@ -1,0 +1,8 @@
+---
+title: Blog
+---
+<!--<h1 class="post-title">Most Popular</h1>-->
+<h1>Latest Posts</h1>
+{% for post in site.posts %}
+    {% include list_item.html %}
+{% endfor %}
