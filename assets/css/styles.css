@@ -179,11 +179,6 @@ nav {
         #date {
             font-size: .7em;
             font-family: ui-monospace;
-            margin-bottom: 0;
-        }
-        
-        #author-name {
-            margin: 0;
         }
         
         #viewCounter {
