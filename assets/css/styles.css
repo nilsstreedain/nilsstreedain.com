@@ -187,6 +187,7 @@ nav {
         }
         
         #viewCounter {
+            margin-top: -4px;
             height: 24px;
             width: auto;
             border-radius: 0;
