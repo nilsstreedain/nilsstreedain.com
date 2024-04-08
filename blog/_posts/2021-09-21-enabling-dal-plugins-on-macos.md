@@ -1,7 +1,7 @@
 ---
 title: Enabling DAL plugins on macOS
 subtitle: How to enable DAL (Device Abstraction Layer) plugins on macOS for webcams and other devices.
-image: /assets/img/macos-webcam.png
+image: /assets/img/dal-plugins.png
 last_updated: 2022-03-03
 featured: true
 ---
