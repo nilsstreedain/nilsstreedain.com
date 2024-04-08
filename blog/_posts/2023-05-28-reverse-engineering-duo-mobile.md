@@ -1,17 +1,17 @@
 ---
 subtitle: How I Reverse Engineered a Closed 2FA Solution to Work with Apps like Google Authenticator
 image: /assets/img/duo-bypass.png
-last_updated: 2024-04-06 15:30:25
+last_updated: 2024-04-07
 featured: true
 ---
 
-In response to the escalating landscape of cybersecurity threats, organizations are increasingly turning to sophisticated security measures to authenticate their users effectively. Among these measures, 2FA (two-factor authentication) has emerged as a pivotal strategy for many institutions. One of the largest 2FA applications, DUO Mobile, has become the go-to solution for many enterprises, educational institutions, and government agencies seeking to avoid data breaches and minimize cybersecurity threats.
+In response to the escalating landscape of cybersecurity threats, organizations are increasing measures to authenticate their users securely. Among these measures, 2FA (two-factor authentication) has emerged as a pivotal strategy for many institutions. One of the largest 2FA applications, DUO Mobile, has become the go-to solution for many enterprises, educational institutions, and government agencies seeking to avoid data breaches and minimize cybersecurity threats.
 
 DUO Mobile is a proprietary 2FA application developed by Cisco, a large technology and communications conglomerate. The DUO Mobile app generates unique time-sensitive passcodes and one-time push notifications to confirm user identities before granting them access to sensitive accounts and systems.
 
 ![Image](/assets/img/duo-page.png)
 
-To achieve this, Cisco has adopted open standards developed by OATH (Initiative for Open Authentication) and encapsulated them within a proprietary 'application validation' API. This restricts users into their app, rather than allowing use of other open-source or publicly validated apps as OATH originally intended.
+To achieve this, Cisco has used open standards developed by OATH (Initiative for Open Authentication) and encapsulated them within a proprietary 'application validation' API. This restricts users into their app, rather than allowing use of other open-source or publicly validated apps as OATH originally intended.
 
 > “The Initiative for Open Authentication (OATH) addresses these challenges with standard, open technology that is available to all. OATH is taking an all-encompassing approach, delivering solutions that allow for strong authentication of all users on all devices, across all networks.” - [OATH](https://openauthentication.org)
 
@@ -52,7 +52,7 @@ It seemed unlikely to me that Cisco would reinvent the wheel, so I thought it mo
 
 ![Image](/assets/img/ga-error.png)
 
-So it’s not a valid OATH token; let’s dig further into the data contained within this QR code. Using a QR code reader, or the error above, we get the following data out of the QR code:
+So it’s not a valid OATH token; let’s dig further into the data contained within this QR code. Using a QR code reader, or the error above, we get the following data:
 ```
 iysYvim1lzExImKx8Sqw-YXBpLTQ2MjE3MTg5LmR1b3NlY3VyaXR5LmNvbQ
 ```
@@ -69,7 +69,7 @@ The data appears to consist of two separate encoded pieces of text, delimited by
 ## Intercepting DUO Mobile Communication
 To monitor communication coming to and from the DUO app on my phone, I set up an internet proxy—a piece of software that routes each internet request from my phone, through my computer, allowing me to dig deeper into each communication the app is making.
 
-With the proxy setup, I scanned the QR code into the DUO Mobile app and captured the following request sent. Notice the text `iysYvim1lzExImKx8Sqw` in the URL; this must be what the DUO app uses to activate the code, but where is the secret key?
+With the proxy setup, I scanned the QR code into the DUO Mobile app and captured the following request. Notice the text `iysYvim1lzExImKx8Sqw` in the URL; this must be what the DUO app uses to activate the code, but where is the secret key?
 ```js
 POST https://api-46217189.duosecurity.com/push/v2/activation/iysYvim1lzExImKx8Sqw?customer_protocol=1 HTTP/2.0
 User-Agent: okhttp/2.7.5
@@ -93,7 +93,7 @@ User-Agent: okhttp/2.7.5
 At this point, the DUO Device Management webpage updated to show that the device had been activated:
 ![Image](/assets/img/duo-activated.png)
 
-and the DUO server responded to the client request with the following data. Notably, this data contains the value `hotp_secret`. In the next section, we will attempt to activate this HOTP in a third-party app using this secret (aka the key).
+and the DUO server responded to the client request with the following data. Notably, this data contains the value `hotp_secret`, our key! In the next section, we will attempt to activate HOTP in a third-party app using this secret (aka the key).
 ```js
 {
   "akey": “…”,                  // Removed by author
@@ -122,7 +122,7 @@ and the DUO server responded to the client request with the following data. Nota
 ```
 
 ## Activating HOTP Token
-To activate the HOTP token, I followed the formatting instructions provided in [this archived Google repository](https://github.com/google/google-authenticator/wiki/Key-Uri-Format). This guide outlines the required structure for creating the HOTP URI, which serves as a standardized format for representing authentication tokens.
+To activate the HOTP token, I followed the formatting instructions provided in [this archived Google repository](https://github.com/google/google-authenticator/wiki/Key-Uri-Format). This guide outlines the required structure for creating an HOTP URI, which serves as a standardized format for representing authentication tokens.
 
 The HOTP URI includes essential details such as the account name (`Oregon State University`), the secret key, and the issuer (`DUO`). Here is the formatted URI below:
 ```
@@ -135,10 +135,10 @@ With the URI created, the next step involved converting it into a QR code, to be
 Success! Now to make the process easier.
 
 ## Creating DUO-Bypass
-While informative, going through that entire process manually to use a third-party app is very cumbersome. For those who may want to use a third-party 2FA app without the hassle, I've created [DUO-Bypass](https://duo-bypass.nilsstreedain.com). This site allows anyone to instantly generate a HOTP URI QR Code using only the URL of the initial QR code image. I've also created a simple [bash script](https://github.com/nilsstreedain/duo-bypass/tree/main/script) that goes through the same process, for more advanced users who may be uncomfortable with an untrusted site accessing their 2FA credentials. 
+While informative, going through that entire process manually to use a third-party app is very cumbersome. For those who may want to use a third-party 2FA app without the hassle, I've created [DUO-Bypass](https://duo-bypass.nilsstreedain.com). This site allows anyone to instantly generate a HOTP URI QR Code using only the URL of the initial QR code image. I've also created a simple [bash script](https://github.com/nilsstreedain/duo-bypass/tree/main/script) that automates the same process, for more advanced users who may be uncomfortable with an untrusted site accessing their 2FA credentials. 
 
 ## Conclusion
-In conclusion, while the importance of robust cybersecurity measures cannot be overstated, it is disheartening to witness the tightening grip of proprietary solutions like DUO Mobile on what was once an open standard. The encapsulation of OATH standards within DUO's proprietary 'application validation' API restricts users to a closed ecosystem, contradicting the ethos of open authentication.
+In conclusion, while the importance of robust cybersecurity measures cannot be overstated, it is disheartening to witness the tightening grip of proprietary solutions like DUO Mobile on what was intended to be an open standard. The encapsulation of OATH standards within DUO's proprietary 'application validation' API restricts users to a closed ecosystem, contradicting the ethos of open authentication.
 
 I hope this blog post shed some light on the implications of such proprietary practices. By monopolizing access to 2FA solutions, DUO effectively monetizes what was originally intended to be freely accessible through open standards like OATH. This monetization, however, comes without significant innovation or added value to users. Instead, it perpetuates a cycle of vendor lock-in, where users are beholden to proprietary solutions without meaningful alternatives.
 
