@@ -1,12 +1,18 @@
-# unbound + pi-hole + AutoUpdating BlockLists
+---
+title: Set Up Pi-hole + Unbound
+subtitle: How I Reverse Engineered a Closed 2FA Solution to Work with Apps like Google Authenticator
+image: /assets/img/pi-hole+unbound.png
+last_updated: 2021-10-04
+featured: true
+---
 
+# unbound + pi-hole + AutoUpdating BlockLists
 Before getting started:
 - Create a fresh install of Raspbian (or your prefered distro) with ssh enabled
 - Connect your Raspberry Pi (or whatever computer you're using) to your network
-- ssh in the Pi
+- ssh into the Pi
 
 ## Update Raspberry Pi
-
 ```bash
 sudo apt update
 ```
@@ -16,7 +22,6 @@ sudo apt full-upgrade
 ```
 
 ## Change Raspberry Pi Password
-
 ```bash
 passwd
 ```
@@ -32,34 +37,28 @@ Set Raspberry Pi Country (raspi-config > Localisation Options > WLAN Country)
 Change Raspberry Pi Hostname (raspi-config > System Options > Hostname)
 
 ## Setup Pi-Hole
-
 Install Pi-Hole and follow the steps in the user interface
-
 ```bash
 sudo curl -sSL https://install.pi-hole.net | bash
 ```
 
 Change default Pi-Hole password
-
 ```bash
 sudo pihole -a -p
 ```
 
 ## Setup Unbound
-
 Install Unbound
-
 ```bash
 sudo apt install unbound
 ```
-Update the list of primary root servers
 
+Update the list of primary root servers
 ```bash
 wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
 ```
 
 ### Configure unbound
-
 Open unbound configuration
 
 ```bash
@@ -67,7 +66,6 @@ sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
 ```
 
 Paste the following:
-
 ```yml
 server:
     # If no logfile is specified, syslog is used
@@ -135,7 +133,6 @@ sudo systemctl restart dhcpcd
 -->
 
 Finally, restart unbound
-
 ```bash
 sudo service unbound restart
 ```
@@ -143,15 +140,12 @@ sudo service unbound restart
 Use the web admin panel to change the Pi-Hole upstream DNS to 127.0.0.1#5335 for IPv4 and ::1#5335 for IPv6
 
 ### Update root.hints monthly (Not Really Needed)
-
 Create a monthly cron job called updateroothints
-
 ```bash
 sudo nano /etc/cron.monthly/updateroothints
 ```
 
 Paste the following:
-
 ```bash
 #!/bin/sh
 
@@ -160,15 +154,12 @@ wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound
 ```
 
 Make it executable
-
 ```bash
 sudo chmod +x /etc/cron.monthly/updateroothints
 ```
 
 ## Setup Auto-Updating BlockLists
-
 Install pihole-updatelists and it's dependacies
-
 ```bash
 sudo apt-get install php-cli php-sqlite3 php-intl php-curl
 ```
@@ -178,7 +169,6 @@ wget -O - https://raw.githubusercontent.com/jacklul/pihole-updatelists/master/in
 ```
 
 Configure pihole-updatelists
-
 ```bash
 sudo nano /etc/pihole-updatelists.conf
 ```
@@ -201,21 +191,17 @@ Whitelist (regex):
 `https://raw.githubusercontent.com/nilsstreedain/pihole-whitelist/main/regex.txt`
 
 Update pi-hole lists
-
 ```bash
 sudo pihole-updatelists
 ```
 
 ### Update pi-hole lists daily
-
 Create a daily cron job called updatelists
-
 ```bash
 sudo nano /etc/cron.daily/updatelists
 ```
 
 Paste the following:
-
 ```bash
 #!/bin/sh
 
@@ -224,7 +210,6 @@ sudo pihole-updatelists
 ```
 
 Make it executable
-
 ```bash
 sudo chmod +x /etc/cron.daily/updatelists
 ```
