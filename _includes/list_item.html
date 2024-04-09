@@ -5,7 +5,7 @@
     <div class="text-content">
         <h3>{{ post.title }}</h3>
         <p class="subtitle">{{ post.description }}</p>
-        {% if page.last_modified_at %}
+        {% if post.last_modified_at %}
             <p class="date">{{ post.last_modified_at | date: "%b %d, %Y" }}</p>
         {% else %}
             <p class="date">{{ post.date | date: "%b %d, %Y" }}</p>
