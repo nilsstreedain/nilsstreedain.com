@@ -3,7 +3,7 @@ title: Setting Up Pi-hole with Unbound
 description: How to set up Pi-Hole With Unbound and AutoUpdating Blocklists
 tags: linux dns raspberry-pi blacklist pi-hole raspbian bash-script raspberrypi
 image:
-  path: /assets/img/phole-unbound.png
+  path: /assets/img/phole-unbound.webp
   alt: Pi-Hole and Unbound logos over a gradient
 last_modified_at: 2021-10-04
 ---

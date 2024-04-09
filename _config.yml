@@ -37,3 +37,12 @@ plugins:
 feed:
   categories:
     - blog
+
+webp:
+  enabled: true
+  quality: 100
+  img_dir: ["/assets/img"]
+  nested: true
+  formats: [".jpeg", ".jpg", ".png", ".tiff"]
+  gifs: [".gif"]
+  regenerate: true

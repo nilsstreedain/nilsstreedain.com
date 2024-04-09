@@ -2,7 +2,7 @@
 description: How to Set Up a Simple Raspberry Pi Docker Setup, Configured with Pi-Hole and Cloudflared using Auto-Updating Blocklists
 tags: raspberry-pi raspberrypi raspbian linux bash-script dns pi-hole
 image:
-  path: /assets/img/rpi-docker.png
+  path: /assets/img/rpi-docker.webp
   alt: Raspberry Pi and Docker logos over a gradient
 last_modified_at: 2022-09-19
 featured: true

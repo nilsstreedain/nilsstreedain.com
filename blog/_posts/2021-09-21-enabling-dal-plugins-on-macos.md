@@ -3,7 +3,7 @@ title: Enabling DAL plugins on macOS
 description: How to enable DAL (Device Abstraction Layer) plugins on macOS for webcams and other devices.
 tags: macos sip dal workaround webcam macos-sip macos-webcam
 image:
-  path: /assets/img/dal-plugins.png
+  path: /assets/img/dal-plugins.webp
   alt: Mac logo and illustration of a webcam
 last_modified_at: 2022-03-03
 featured: true
