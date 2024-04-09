@@ -45,4 +45,4 @@ webp:
   nested: true
   formats: [".jpeg", ".jpg", ".png", ".tiff"]
   gifs: [".gif"]
-  regenerate: true
+  regenerate: false
