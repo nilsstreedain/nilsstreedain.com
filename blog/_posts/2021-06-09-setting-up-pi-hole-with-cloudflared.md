@@ -2,7 +2,9 @@
 title: Setting Up Pi-hole with Cloudflared
 description: How to set up Pi-Hole with Cloudflared and AutoUpdating Blocklists
 tags: linux dns raspberry-pi pi-hole raspbian bash-script raspberrypi
-image: /assets/img/phole-cloudflared.png
+image:
+  path: /assets/img/phole-cloudflared.png
+  alt: Pi-Hole and Cloudflare logos over a gradient
 last_modified_at: 2021-10-04
 ---
 Before getting started:

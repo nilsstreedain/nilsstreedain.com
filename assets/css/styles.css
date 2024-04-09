@@ -14,11 +14,12 @@
 @font-face {
 	font-family: typeface;
 	src: url(/assets/fonts/typeface.woff2) format(woff2);
+    font-display: fallback;
 }
 
 html {
 	background-color: var(--primary);
-	font-family: typeface;
+    font-family: typeface, Helvetica Light, sans-serif;
     
     & body {
         margin: 0;
@@ -164,7 +165,7 @@ nav {
         padding-top: 0;
         border-radius: 10px;
         border: 1px solid var(--highlight);
-        font-family: -apple-system;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         line-height: 1.5;
         
         #poster {
@@ -178,7 +179,7 @@ nav {
         
         #date {
             font-size: .7em;
-            font-family: ui-monospace;
+            font-family: ui-monospace, monospace;
         }
         
         #viewCounter {
@@ -234,7 +235,7 @@ nav {
         & code.highlighter-rouge {
             border-radius: 5px;
             background: var(--codeBackground);
-            font-family: ui-monospace;
+            font-family: ui-monospace, monospace;
             padding: 2px;
             font-size: .85em;
             word-wrap: break-word;
@@ -257,7 +258,7 @@ nav {
         margin-bottom: var(--sPad);
         border-radius: 10px;
         border: 1px solid var(--highlight);
-        font-family: -apple-system;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
         word-break: break-word;
         
         

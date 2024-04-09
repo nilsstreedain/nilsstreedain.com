@@ -1,7 +1,9 @@
 ---
 description: How I Reverse Engineered a Closed 2FA Solution to Work with Apps like Google Authenticator
 tags: otp cisco hack hotp google-authenticator workaround bypass duo duo-security duo-mobile
-image: /assets/img/duo-bypass.png
+image:
+  path: /assets/img/duo-bypass.png
+  alt: Illustration of DUO Mobile lock being opened by a key
 last_modified_at: 2024-04-07
 featured: true
 ---
@@ -10,7 +12,7 @@ In response to the escalating landscape of cybersecurity threats, organizations 
 
 DUO Mobile is a proprietary 2FA application developed by Cisco, a large technology and communications conglomerate. The DUO Mobile app generates unique time-sensitive passcodes and one-time push notifications to confirm user identities before granting them access to sensitive accounts and systems.
 
-![Image](/assets/img/duo-page.png)
+![Screenshot of DUO Authentication Page](/assets/img/duo-page.png)
 
 To achieve this, Cisco has used open standards developed by OATH (Initiative for Open Authentication) and encapsulated them within a proprietary 'application validation' API. This restricts users into their app, rather than allowing use of other open-source or publicly validated apps as OATH originally intended.
 
@@ -38,20 +40,20 @@ In this section, we will go through the entire DUO device enrollment process. As
 
 When adding a device to DUO, various device types can be selected. The OTP flow demonstrated in this blog post is applicable to both the **Mobile phone** and **Tablet** options. However, while these options function very similarly on the backend, the **Mobile phone** option requires adding and verifying a phone number. Because of this, I will be using the **Tablet** option for the remainder of this demonstration.
 
-![Image](/assets/img/duo-devices.png)
+![Screenshot of DUO Device Type Selection Page](/assets/img/duo-devices.png)
 
 After selecting the device type, DUO also asks the user to select their operating system (iOS or Android). I have found this to be less important as we will not be utilizing their app, but both have worked in my testing. I have selected Android.
 
-![Image](/assets/img/duo-os.png)
+![Screenshot of DUO Operating System Selection Page](/assets/img/duo-os.png)
 
 Next, we are presented with a QR code that can be scanned into the DUO app; this is where things get interesting. In the image below, the **Continue** button is grayed out. This is because DUO doesn't allow device activation until the DUO Mobile app informs their servers that the code should be activated. We will talk more about this later; first, I want to dig into the QR code we are looking at.
 
-![Image](/assets/img/duo-qr.png)
+![Screenshot of DUO Activation QR Code](/assets/img/duo-qr.png)
 
 ## Decoding DUO QR Code
 It seemed unlikely to me that Cisco would reinvent the wheel, so I thought it most likely they were using a previously developed OTP standard. The first thing I tried was scanning the code into Google Authenticator, but was met with the following error:
 
-![Image](/assets/img/ga-error.png)
+![Screenshot of Invalid Barcode Error in Google Authenticator](/assets/img/ga-error.png)
 
 So it’s not a valid OATH token; let’s dig further into the data contained within this QR code. Using a QR code reader, or the error above, we get the following data:
 ```
@@ -92,7 +94,7 @@ User-Agent: okhttp/2.7.5
 }
 ```
 At this point, the DUO Device Management webpage updated to show that the device had been activated:
-![Image](/assets/img/duo-activated.png)
+![Screenshot of Activated DUO QR Code](/assets/img/duo-activated.png)
 
 and the DUO server responded to the client request with the following data. Notably, this data contains the value `hotp_secret`, our key! In the next section, we will attempt to activate HOTP in a third-party app using this secret (aka the key).
 ```js
@@ -131,7 +133,7 @@ otpauth://hotp/Oregon State University?secret=b40ed85d41039fca705293a286cad7ab&i
 ```
 With the URI created, the next step involved converting it into a QR code, to be scanned by Google Authenticator. Using a QR code generator, I converted the text-based URI into a QR code that could be scanned into any standard third-party 2FA app.
 
-![Image](/assets/img/ga-success.png)
+![Screenshot of Active OTP in Google Authenticator](/assets/img/ga-success.png)
 
 Success! Now to make the process easier.
 

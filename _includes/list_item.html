@@ -1,6 +1,6 @@
 <a href="{{ post.url }}" class="list-item">
     {% if post.image %}
-    <img src="{{ post.image }}">
+    <img src="{{ post.image.path }}" alt="{{ post.image.alt }}">
     {% endif %}
     <div class="text-content">
         <h3>{{ post.title }}</h3>
