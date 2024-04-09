@@ -1,7 +1,8 @@
 ---
-subtitle: How I Reverse Engineered a Closed 2FA Solution to Work with Apps like Google Authenticator
+description: How I Reverse Engineered a Closed 2FA Solution to Work with Apps like Google Authenticator
+tags: otp cisco hack hotp google-authenticator workaround bypass duo duo-security duo-mobile
 image: /assets/img/duo-bypass.png
-last_updated: 2024-04-07
+last_modified_at: 2024-04-07
 featured: true
 ---
 

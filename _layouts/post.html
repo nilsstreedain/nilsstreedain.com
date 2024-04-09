@@ -4,12 +4,12 @@ layout: default
 <div class="card">
     <img src="{{ page.image }}" id="poster"/>
 	<h1>{{ page.title }}</h1>
-	<h3>{{ page.subtitle }}</h2>
+	<h3>{{ page.description }}</h2>
     <img alt="Hits" id="viewCounter" src="https://hits.sh/nilsstreedain.com{{ page.url }}.svg?style=for-the-badge&label=views&color=212121&labelColor=212121"/>
 	<p id="date">
         {{ page.date | date: "%b %d, %Y" }}<br>
-        {% if page.last_updated %}
-           Updated {{ page.last_updated | date: "%b %d, %Y" }}
+        {% if page.last_modified_at %}
+           Updated {{ page.last_modified_at | date: "%b %d, %Y" }}
         {% endif %}
 	</p>
     <p><a href="/#nav">By Nils Streedain</a></p>
