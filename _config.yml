@@ -28,6 +28,8 @@ defaults:
       path: ""
     values:
       layout: "default"
+      
+permalink: pretty
 
 plugins:
   - jekyll-feed
