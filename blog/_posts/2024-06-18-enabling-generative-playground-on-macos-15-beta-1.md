@@ -8,18 +8,20 @@ image:
 last_modified_at: 2024-07-18
 featured: true
 ---
-Last week Apple unveiled their latest software advancements at WWDC, including "Apple Intelligence", their cross-platform suite of AI tools. Including Generative Playground, a dedicated iOS and mac stable diffusion app for generating images, and one of the more controversial tools.
+Last week Apple unveiled their latest software advancements at WWDC, including "Apple Intelligence", their cross-platform suite of AI tools. Including Generative Playground, a dedicated iOS/macOS stable diffusion application for generating images, and one of the more controversial tools.
 
-While none of the announced "Apple Intelligence" are available by default in the initial software betas, through some macOS trickery, the app can be launched and run on some supported mac devices. Below I will describe, the process for enabling this application for learning purposes. 
+While none of the announced "Apple Intelligence" are available by default in the initial software betas, through some macOS trickery, the app can be launched and run on some supported Mac devices. Below I will describe the process for enabling this application. 
 
 ## ⚠️ SIP Warning
 Though this workaround is very interesting, it can have some serious security implications. The method below requires disabling a feature of macOS ‘System Integrity Protection’ (SIP) which is specifically designed to protect macOS system functions and applications from being altered or modified. Keep in mind that the following will boot the system without complete file system protection.
 
 ## ⚠️ Beta Warning
-Additionally, this workaround requires enabling a disabled feature within a beta release of software. This could cause significant unintended consequences and is clearly not intended to be done. Only follow this guide for learning purposes if you are prepared to lose any data stored on your device. Do at your own risk.
+Additionally, this workaround requires enabling an intentionally disabled feature within a beta release of software. This could cause significant unintended consequences and is clearly outside of general expectations. Only follow this guide for learning purposes if you are prepared to lose any data stored on your device. Do at your own risk.
 
 ## Step 1: Disable macOS SIP
-After the initial betas were released, testers quickly noticed that the Generative Playground application binary appears to be included on macOS 15.0 Beta 1, but when ran, only opened a very limited version of the app. Though the compiled code is included, it is disabled. To run the full application, it must be modified, which requires disabling macOS SIP. To get started, reboot your mac into recovery mode. (This guide is only intended for Apple Silicon devices.)
+After the initial betas were released, testers quickly noticed that the Generative Playground application binaries appear to be included on macOS 15.0 Beta 1. However when these are run, they only open a very limited version of the app. Though the compiled code is included, it is disabled. To run the full application, it must be modified, which requires disabling macOS SIP. To get started, reboot your mac into recovery mode:
+
+__Note: This guide is only intended of Apple Silicon Devices__
 
 ### Recovery Mode:
 1. On your Mac, click the **Apple logo** on the upper left corner and select **Shut Down**.
@@ -55,11 +57,11 @@ sudo reboot
 ## Step 3: Modify App Contents
 Finally, we must modify the app contents to allow the app to launch with these features enabled. To do this, we will be downloading a macOS dynamic library created by [@eveiyneee](https://x.com/eveiyneee) and running it on the installed `GenerativePlayground.app` application.
 1. Download the [libplainhook.dylib](/assets/files/libplainhook.dylib) file.
-2. Resign the library.
+2. Open Terminal and run the following command to resign the library.
 ```
 xattr -sc Downloads/libplainhook.dylib
 ```
-3. Run the library on the application binary.
+3. Use the following command to run the library on the application binary.
 ```
 DYLD_INSERT_LIBRARIES=./Downloads/libplainhook.dylib /System/Applications/GenerativePlayground.app/Contents/MacOS/GenerativePlayground
 ```
