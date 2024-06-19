@@ -55,7 +55,7 @@ sudo reboot
 ```
 
 ## Step 3: Modify App Contents
-Finally, we must modify the app contents to allow the app to launch with these features enabled. To do this, we will be downloading a macOS dynamic library created by [@eveiyneee](https://x.com/eveiyneee) and running it on the installed `GenerativePlayground.app` application.
+After disabling SIP and enabling the necessary architecture, the next step involves modifying the Generative Playground application itself. This modification allows the app to fully utilize its features, which are initially disabled in the beta release. To do this, we will be downloading a macOS dynamic library created by [@eveiyneee](https://x.com/eveiyneee) and running it on the installed `GenerativePlayground.app` application.
 1. Download the [libplainhook.dylib](/assets/files/libplainhook.dylib) file.
 2. Open Terminal and run the following command to resign the library.
 ```
@@ -69,4 +69,6 @@ DYLD_INSERT_LIBRARIES=./Downloads/libplainhook.dylib /System/Applications/Genera
 4. Close Terminal and GenerativePlayground, then open the application normally by selecting it in the dock
 
 ## Step 4: Re-Enable macOS SIP
+After completing the modifications and ensuring the app functions correctly, the final step is to re-enable macOS System Integrity Protection (SIP). This restores the security protections to your macOS system that were temporarily disabled for the modification process.
+
 Follow the process in step 1 for entering recovery mode and opening terminal, then use the command `csrutil enable` instead of `csrutil disable`. Finally, reboot your Mac, and ensure the GenerativePlayground application still opens. If not, try each step again.
