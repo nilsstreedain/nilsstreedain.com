@@ -10,7 +10,7 @@ featured: true
 ---
 Last week at WWDC, Apple unveiled their latest software advancements, showcasing 'Apple Intelligence'—their cross-platform suite of AI tools. Among these tools is Generative Playground, a dedicated iOS/macOS application for generating images, which has sparked some controversy.
 
-While none of the announced "Apple Intelligence" features are available by default in the initial software betas, the Generative Playground app can be launched and run on some supported Mac devices through a series of macOS adjustments. Below, I will outline the process for enabling this application.
+While none of the announced 'Apple Intelligence' features are available by default in the initial software betas, the Generative Playground app can be launched and run on some supported Mac devices through a series of macOS adjustments. Below, I will outline the process for enabling this application.
 
 ## ⚠️ SIP Warning
 Although this workaround is intriguing, it carries serious security implications. The method described involves disabling a feature of macOS called System Integrity Protection (SIP), which is specifically designed to safeguard macOS system functions and applications from unauthorized modifications. Disabling SIP temporarily compromises the security of your macOS system.
