@@ -8,7 +8,7 @@ image:
 last_modified_at: 2024-07-18
 featured: true
 ---
-Last week Apple unveiled their latest software advancements at WWDC, including "Apple Intelligence", their cross-platform suite of AI tools. Including Generative Playground, a dedicated iOS/macOS stable diffusion application for generating images, and one of the more controversial tools.
+Last week Apple unveiled their latest software advancements at WWDC, showcasing "Apple Intelligence", their cross-platform suite of AI tools. Including Generative Playground, a dedicated iOS/macOS stable diffusion application for generating images, and one of the more controversial tools.
 
 While none of the announced "Apple Intelligence" are available by default in the initial software betas, through some macOS trickery, the app can be launched and run on some supported Mac devices. Below I will describe the process for enabling this application. 
 
