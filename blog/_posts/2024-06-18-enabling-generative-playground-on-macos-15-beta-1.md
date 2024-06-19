@@ -8,15 +8,15 @@ image:
 last_modified_at: 2024-07-18
 featured: true
 ---
-Last week Apple unveiled their latest software advancements at WWDC, including "Apple Intelligence", their crossplatform suite of AI tools. Including Generative Playground, a dedicated iOS and mac stable diffusion app for generating images, and one of the more controvertial tools.
+Last week Apple unveiled their latest software advancements at WWDC, including "Apple Intelligence", their cross-platform suite of AI tools. Including Generative Playground, a dedicated iOS and mac stable diffusion app for generating images, and one of the more controversial tools.
 
-While none of the announced "Apple Intelligence" are available by default in the initial software betas, through some macOS trickery, the app can be launched and run on some supported mac devices. Below I will descibe, the process for enabling this application for learning purposes. 
+While none of the announced "Apple Intelligence" are available by default in the initial software betas, through some macOS trickery, the app can be launched and run on some supported mac devices. Below I will describe, the process for enabling this application for learning purposes. 
 
 ## ⚠️ SIP Warning
 Though this workaround is very interesting, it can have some serious security implications. The method below requires disabling a feature of macOS ‘System Integrity Protection’ (SIP) which is specifically designed to protect macOS system functions and applications from being altered or modified. Keep in mind that the following will boot the system without complete file system protection.
 
 ## ⚠️ Beta Warning
-Additionally, this workaround requires enabling a disabled feature within a beta release of software. This could cause significant unintended consiquences and is clearly not intended to be done. Only follow this guide for learning purposes if you are prepared to lose any data stored on your device. Do at your own risk.
+Additionally, this workaround requires enabling a disabled feature within a beta release of software. This could cause significant unintended consequences and is clearly not intended to be done. Only follow this guide for learning purposes if you are prepared to lose any data stored on your device. Do at your own risk.
 
 ## Step 1: Disable macOS SIP
 After the initial betas were released, testers quickly noticed that the Generative Playground application binary appears to be included on macOS 15.0 Beta 1, but when ran, only opened a very limited version of the app. Though the compiled code is included, it is disabled. To run the full application, it must be modified, which requires disabling macOS SIP. To get started, reboot your mac into recovery mode. (This guide is only intended for Apple Silicon devices.)
