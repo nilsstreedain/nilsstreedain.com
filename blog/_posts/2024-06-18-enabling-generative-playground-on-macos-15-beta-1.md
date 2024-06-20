@@ -31,14 +31,13 @@ __Note: This guide is specifically for Apple Silicon devices.__
 4. If asked, select a volume to recover, then click **Next**.
 5. Select an administrator account, then click **Next**.
 6. Enter the password for the administrator account, then click **Continue**.
-  - When the Recovery app appears in the menu bar, you can choose any of the available options in the window or the menu bar.
 
 ### System Integrity Protection Configuration
 1. Select the **Utilities** tab in the macOS menu bar.
 2. Choose **Terminal** from the dropdown list.
 3. Disable SIP by entering the following command, then pressing enter:
 ```
-csrutil enable
+csrutil disable
 ```
 4. Reboot your Mac.
 
