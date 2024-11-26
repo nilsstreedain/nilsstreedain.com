@@ -6,6 +6,7 @@ image:
   path: /assets/img/phole-unbound.webp
   alt: Pi-Hole and Unbound logos over a gradient
 last_modified_at: 2021-10-04
+bluesky_post_uri: https://bsky.app/profile/nilsstreedain.com/post/3lbtf5dxgjk2c
 ---
 Before getting started:
 - Create a fresh install of Raspbian (or your prefered distro) with ssh enabled

@@ -6,6 +6,7 @@ image:
   alt: Illustration of DUO Mobile lock being opened by a key
 last_modified_at: 2024-04-07
 featured: true
+bluesky_post_uri: https://bsky.app/profile/nilsstreedain.com/post/3lbtfc3ctrs2c
 ---
 
 In response to the escalating landscape of cybersecurity threats, organizations are increasing measures to authenticate their users securely. Among these measures, 2FA (two-factor authentication) has emerged as a pivotal strategy for many institutions. One of the largest 2FA applications, DUO Mobile, has become the go-to solution for many enterprises, educational institutions, and government agencies seeking to avoid data breaches and minimize cybersecurity threats.

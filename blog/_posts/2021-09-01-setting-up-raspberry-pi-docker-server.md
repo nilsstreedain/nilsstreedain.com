@@ -5,6 +5,7 @@ image:
   path: /assets/img/rpi-docker.webp
   alt: Raspberry Pi and Docker logos over a gradient
 last_modified_at: 2022-09-19
+bluesky_post_uri: https://bsky.app/profile/nilsstreedain.com/post/3lbtfapl2ss2c
 ---
 Before getting started
 - Create a fresh install of Raspberry Pi OS with ssh enabled (add an empty file named ssh to the boot folder)

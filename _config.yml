@@ -12,11 +12,11 @@ logo: /assets/icons/apple-touch-icon.png
 social:
   name: Nils Streedain
   links:
+    - https://bsky.app/profile/nilsstreedain.com
     - https://www.instagram.com/nils.streedain
     - https://github.com/nilsstreedain
     - https://www.youtube.com/c/nilsstreedain
     - https://www.linkedin.com/in/nilsstreedain
-    - https://twitter.com/nilsstreedain
 
 defaults:
   - scope:

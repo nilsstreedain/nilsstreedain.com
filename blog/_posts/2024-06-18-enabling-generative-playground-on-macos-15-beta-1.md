@@ -7,6 +7,7 @@ image:
   alt: Screenshot of Generative Playground running on macOS 15.0 Beta 1
 last_modified_at: 2024-07-18
 featured: true
+bluesky_post_uri: https://bsky.app/profile/nilsstreedain.com/post/3lbtfcqijdc2c
 ---
 Last week at WWDC, Apple unveiled their latest software advancements, showcasing 'Apple Intelligence'—their cross-platform suite of AI tools. Among these tools is Generative Playground, a dedicated iOS/macOS application for generating images, which has sparked some controversy.
 

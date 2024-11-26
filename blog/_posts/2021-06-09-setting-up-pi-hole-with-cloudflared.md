@@ -6,6 +6,7 @@ image:
   path: /assets/img/phole-cloudflared.webp
   alt: Pi-Hole and Cloudflare logos over a gradient
 last_modified_at: 2021-10-04
+bluesky_post_uri: https://bsky.app/profile/nilsstreedain.com/post/3lbtf6yv5qk2c
 ---
 Before getting started:
 - Create a fresh install of Raspbian (or your prefered distro) with ssh enabled
