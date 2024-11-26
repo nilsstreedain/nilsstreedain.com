@@ -271,7 +271,7 @@ nav {
 }
 
 /* Link Styling */
-.card p a, .card ul a, .card ol a, .author, #comments p a, #see-more {
+.card p a, .card ul a, .card ol a, .author, #comments p a, #see-more, #author p a {
     text-decoration: none;
     color: var(--highlight2);
     background: linear-gradient(var(--accent) 0 0) no-repeat bottom / 0% 1px;
