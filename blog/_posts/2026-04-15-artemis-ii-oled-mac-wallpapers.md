@@ -6,7 +6,7 @@ image:
   path: /assets/img/artemis-ii.webp
   alt: The Moon's cratered surface lit from below with Earth rising behind it, photographed during the Artemis II mission
 featured: true
-bluesky_post_uri: https://bsky.app/profile/nilsstreedain.com/post/3mjlmz5ipdc24
+bluesky_post_uri: https://bsky.app/profile/nilsstreedain.com/post/3mjlnfthbl224
 ---
 My favorite set of five Artemis II shots, edited from the original NASA photos, with white balance adjustments and composited onto pure black backgrounds. I picked these five because they work well as a rotating set, with varied compositions across the group. Tuned for OLED and mini-LED Mac displays where pure black means the pixels actually turn off, so the subjects feel like they're floating in real darkness.
 
