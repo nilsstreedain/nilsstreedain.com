@@ -48,6 +48,3 @@ webp:
   formats: [".jpeg", ".jpg", ".png", ".tiff"]
   gifs: [".gif"]
   regenerate: false
-
-exclude:
-  - downloads
