@@ -19,7 +19,7 @@ My favorite set of five Artemis II shots, edited from the original NASA photos, 
 - 3:2 aspect ratio (most Mac displays are 16:10 or 16:9, these are edited to crop correctly on Mac while still supporting external displays with different aspect ratios)
 - Edited from original public domain NASA Artemis II photos
 
-### Download & Set Up
+### Download & Set Up Wallpaper Set
 1. [Click Here](https://github.com/nilsstreedain/nilsstreedain.com/raw/refs/heads/main/downloads/artemis-ii-wallpapers.zip) to download the wallpapers.
 2. Unzip, then go to **System Settings** > **Wallpaper** > **Add Photo...** > **Choose Folder...**, and select the folder.
 
