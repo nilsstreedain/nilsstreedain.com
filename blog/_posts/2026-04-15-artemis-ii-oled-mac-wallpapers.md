@@ -8,13 +8,13 @@ image:
 featured: true
 bluesky_post_uri: https://bsky.app/profile/nilsstreedain.com/post/3mjlnfthbl224
 ---
-My favorite set of five Artemis II shots, edited from the original NASA photos, with white balance adjustments and composited onto pure black backgrounds. I picked these five because they work well as a rotating set, with varied compositions across the group. Tuned for OLED and mini-LED Mac displays where pure black means the pixels actually turn off, so the subjects feel like they're floating in real darkness.
+My favorite set of five Artemis II shots, edited from the original NASA photos, with white balance adjustments and composited onto pure black backgrounds. I picked these five to work well as a rotating set, with varied compositions across the group. These photos have been tuned for OLED and mini-LED Mac displays so pure black actually turns pixels off, and the subjects look like they're floating in real darkness.
 
 ### Features
 - HEIC native macOS wallpaper
+- `#000` black backgrounds for true "pixel-off" OLED black
 - Display P3 with embedded ICC profile
 - 4:4:4 chroma subsampling
-- `#000000` black backgrounds for true "pixel-off" OLED black
 - 5568 × 3712
 - 3:2 aspect ratio (most Mac displays are 16:10 or 16:9, these are edited to crop correctly on Mac while still supporting external displays with different aspect ratios)
 - Edited from original public domain NASA Artemis II photos
