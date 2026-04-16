@@ -11,7 +11,7 @@ bluesky_post_uri:
 My favorite set of five Artemis II shots, edited from the original NASA photos, with white balance adjustments and composited onto pure black backgrounds. I picked these five because they work well as a rotating set, with varied compositions across the group. Tuned for OLED and mini-LED Mac displays where pure black means the pixels actually turn off, so the subjects feel like they're floating in real darkness.
 
 ## Download Wallpapers
-[Click Here](https://github.com/nilsstreedain/nilsstreedain.com/blob/main/downloads/artemis-ii-wallpapers.zip) to download the wallpapers.
+[Click Here](https://github.com/nilsstreedain/nilsstreedain.com/raw/refs/heads/main/downloads/artemis-ii-wallpapers.zip) to download the wallpapers.
 
 ### Set up Wallpaper Photo Set on Mac
 Unzip the folder, then go to **System Settings** > **Wallpaper** > **Add Photo...** > **Choose Folder...**, then select the folder.
