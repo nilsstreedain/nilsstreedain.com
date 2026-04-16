@@ -10,12 +10,6 @@ bluesky_post_uri:
 ---
 My favorite set of five Artemis II shots, edited from the original NASA photos, with white balance adjustments and composited onto pure black backgrounds. I picked these five because they work well as a rotating set, with varied compositions across the group. Tuned for OLED and mini-LED Mac displays where pure black means the pixels actually turn off, so the subjects feel like they're floating in real darkness.
 
-## Download Wallpapers
-[Click Here](https://github.com/nilsstreedain/nilsstreedain.com/raw/refs/heads/main/downloads/artemis-ii-wallpapers.zip) to download the wallpapers.
-
-### Set up Wallpaper Photo Set on Mac
-Unzip the folder, then go to **System Settings** > **Wallpaper** > **Add Photo...** > **Choose Folder...**, then select the folder.
-
 ### Features
 - HEIC native macOS wallpaper
 - Display P3 with embedded ICC profile
@@ -25,7 +19,11 @@ Unzip the folder, then go to **System Settings** > **Wallpaper** > **Add Photo..
 - 3:2 aspect ratio (most Mac displays are 16:10 or 16:9, these are edited to crop correctly on Mac while still supporting external displays with different aspect ratios)
 - Edited from original public domain NASA Artemis II photos
 
-## Images Previews
+### Download & Set Up
+1. [Click Here](https://github.com/nilsstreedain/nilsstreedain.com/raw/refs/heads/main/downloads/artemis-ii-wallpapers.zip) to download the wallpapers.
+2. Unzip, then go to **System Settings** > **Wallpaper** > **Add Photo...** > **Choose Folder...**, and select the folder.
+
+### Images Previews
 _Low resolution wallpaper previews, optimized for web._
 
 ![The Moon's cratered surface lit from below with Earth rising behind the horizon](/assets/img/artemis-ii-1@0.5x.webp)
