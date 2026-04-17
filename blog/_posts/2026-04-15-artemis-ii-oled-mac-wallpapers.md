@@ -20,7 +20,7 @@ My favorite set of five Artemis II shots, edited from the original NASA photos, 
 - Edited from original public domain NASA Artemis II photos
 
 ### Download & Set Up Wallpaper Set
-1. [Click Here](https://github.com/nilsstreedain/artemis-ii-wallpapers/raw/refs/heads/main/artemis-ii-wallpapers.zip) to download the wallpapers.
+1. [Click Here](https://github.com/nilsstreedain/artemis-ii-wallpapers/raw/refs/heads/main/Artemis%20II%20Wallpapers.zip) to download the wallpapers.
 2. Unzip, then go to **System Settings** > **Wallpaper** > **Add Photo...** > **Choose Folder...**, and select the folder.
 
 ### Images Previews
